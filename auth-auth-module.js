@@ -19063,7 +19063,7 @@ var appRoutes = [{
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"row\" fxLayout=\"row wrap\">\n    <div *ngFor=\"let dash of dashCard\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\" fxFlex.md=\"25\">\n        <cdk-dashcard [dashData]=\"dash\"></cdk-dashcard>\n    </div>\n</div>\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n    <cdk-bar-graph fxFlex=\"37.5\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\"></cdk-bar-graph>\n    <cdk-doughnut-graph fxFlex=\"37.5\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\"></cdk-doughnut-graph>\n    <cdk-weather fxFlex=\"25\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"100\"></cdk-weather>\n</div>\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n    <cdk-line-graph fxFlex=\"75\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\"></cdk-line-graph>\n    <cdk-share-price fxFlex=\"25\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\"></cdk-share-price>\n</div>\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n    <cdk-sales-list fxFlex=\"60\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"100\" fxFlex.md=\"70\"></cdk-sales-list>\n    <cdk-profile-card fxFlex=\"40\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"100\" fxFlex.md=\"30\"></cdk-profile-card>\n</div>\n\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n    <div fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\" fxFlex.md=\"25\">\n        <cdk-round-progressbar [title]=\"'SALES'\" [current]=\"'23'\" [max]=\"'100'\" [background]=\"'#FFF968'\" [color]=\"'#B1A7FF'\" [boxcolor]=\"'#7986CB'\"></cdk-round-progressbar>\n    </div>\n    <div fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\" fxFlex.md=\"25\">\n        <cdk-round-progressbar [title]=\"'LEADS'\" [current]=\"'33'\" [max]=\"'100'\" [background]=\"'#FFE268'\" [color]=\"'#A7C1FF'\" [boxcolor]=\"'#42A5F5'\"></cdk-round-progressbar>\n    </div>\n    <div fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\" fxFlex.md=\"25\">\n        <cdk-round-progressbar [title]=\"'ASSETS'\" [current]=\"'78'\" [max]=\"'100'\" [background]=\"'#FFC368'\" [color]=\"'#A7F0FF'\" [boxcolor]=\"'#26A69A'\"></cdk-round-progressbar>\n    </div>\n    <div fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\" fxFlex.md=\"25\">\n        <cdk-round-progressbar [title]=\"'BANKING'\" [current]=\"'90'\" [max]=\"'100'\" [background]=\"'#FFCF68'\" [color]=\"'#A7DEFF'\" [boxcolor]=\"'#26C6DA'\"></cdk-round-progressbar>\n    </div>\n</div>\n\n<div fxLayout=\"row\" fxLayout=\"row wrap\" >\n    <cdk-world-map fxFlex=\"100\" [tableData]=\"tableData\"></cdk-world-map>\n</div>"
+module.exports = "<!--\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n    <div *ngFor=\"let dash of dashCard\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\" fxFlex.md=\"25\">\n        <cdk-dashcard [dashData]=\"dash\"></cdk-dashcard>\n    </div>\n</div>\n\n\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n    <cdk-bar-graph fxFlex=\"37.5\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\"></cdk-bar-graph>\n    <cdk-doughnut-graph fxFlex=\"37.5\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\"></cdk-doughnut-graph>\n    <cdk-weather fxFlex=\"25\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"100\"></cdk-weather>\n</div>\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n    <cdk-line-graph fxFlex=\"75\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\"></cdk-line-graph>\n    <cdk-share-price fxFlex=\"25\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\"></cdk-share-price>\n</div> -->\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n    <cdk-sales-list fxFlex=\"100\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"100\" fxFlex.md=\"70\"></cdk-sales-list>\n  <!--  <cdk-profile-card fxFlex=\"40\" fxFlex.lt-sm=\"100\" fxFlex.sm=\"100\" fxFlex.md=\"30\"></cdk-profile-card>\n  -->\n</div>\n<!--\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n    <div fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\" fxFlex.md=\"25\">\n        <cdk-round-progressbar [title]=\"'SALES'\" [current]=\"'23'\" [max]=\"'100'\" [background]=\"'#FFF968'\" [color]=\"'#B1A7FF'\" [boxcolor]=\"'#7986CB'\"></cdk-round-progressbar>\n    </div>\n    <div fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\" fxFlex.md=\"25\">\n        <cdk-round-progressbar [title]=\"'LEADS'\" [current]=\"'33'\" [max]=\"'100'\" [background]=\"'#FFE268'\" [color]=\"'#A7C1FF'\" [boxcolor]=\"'#42A5F5'\"></cdk-round-progressbar>\n    </div>\n    <div fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\" fxFlex.md=\"25\">\n        <cdk-round-progressbar [title]=\"'ASSETS'\" [current]=\"'78'\" [max]=\"'100'\" [background]=\"'#FFC368'\" [color]=\"'#A7F0FF'\" [boxcolor]=\"'#26A69A'\"></cdk-round-progressbar>\n    </div>\n    <div fxFlex.lt-sm=\"100\" fxFlex.sm=\"50\" fxFlex.md=\"25\">\n        <cdk-round-progressbar [title]=\"'BANKING'\" [current]=\"'90'\" [max]=\"'100'\" [background]=\"'#FFCF68'\" [color]=\"'#A7DEFF'\" [boxcolor]=\"'#26C6DA'\"></cdk-round-progressbar>\n    </div>\n</div>\n\n<div fxLayout=\"row\" fxLayout=\"row wrap\" >\n    <cdk-world-map fxFlex=\"100\" [tableData]=\"tableData\"></cdk-world-map>\n</div>\n-->"
 
 /***/ }),
 
@@ -19106,6 +19106,18 @@ var DashboardCrmComponent = /** @class */ (function () {
             { colorDark: '#42A5F5', colorLight: '#64B5F6', number: 1221, title: 'LEADS', icon: 'new_releases' },
             { colorDark: '#26A69A', colorLight: '#4DB6AC', number: 1221, title: 'ASSETS', icon: 'assignments' },
             { colorDark: '#66BB6A', colorLight: '#81C784', number: 1221, title: 'BANKING', icon: 'account_balance' }
+            /*  { colorDark: '#5C6BC0', colorLight: '#7986CB', number: 1221, title: 'SALES', icon: 'local_grocery_store' },
+              { colorDark: '#42A5F5', colorLight: '#64B5F6', number: 1221, title: 'LEADS', icon: 'new_releases' },
+              { colorDark: '#26A69A', colorLight: '#4DB6AC', number: 1221, title: 'ASSETS', icon: 'assignments' },
+              { colorDark: '#66BB6A', colorLight: '#81C784', number: 1221, title: 'BANKING', icon: 'account_balance' },
+              { colorDark: '#5C6BC0', colorLight: '#7986CB', number: 1221, title: 'SALES', icon: 'local_grocery_store' },
+              { colorDark: '#42A5F5', colorLight: '#64B5F6', number: 1221, title: 'LEADS', icon: 'new_releases' },
+              { colorDark: '#26A69A', colorLight: '#4DB6AC', number: 1221, title: 'ASSETS', icon: 'assignments' },
+              { colorDark: '#66BB6A', colorLight: '#81C784', number: 1221, title: 'BANKING', icon: 'account_balance' },
+              { colorDark: '#5C6BC0', colorLight: '#7986CB', number: 1221, title: 'SALES', icon: 'local_grocery_store' },
+              { colorDark: '#42A5F5', colorLight: '#64B5F6', number: 1221, title: 'LEADS', icon: 'new_releases' },
+              { colorDark: '#26A69A', colorLight: '#4DB6AC', number: 1221, title: 'ASSETS', icon: 'assignments' },
+              { colorDark: '#66BB6A', colorLight: '#81C784', number: 1221, title: 'BANKING', icon: 'account_balance' }*/
         ];
         this.tableData = [
             { country: 'India', sales: 5400, percentage: '40%' },
@@ -19415,12 +19427,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sales_list_sales_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./sales-list/sales-list.component */ "./src/app/dashboard-widget/sales-list/sales-list.component.ts");
 /* harmony import */ var _d3_usa_d3_usa_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./d3-usa/d3-usa.component */ "./src/app/dashboard-widget/d3-usa/d3-usa.component.ts");
 /* harmony import */ var _world_map_world_map_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./world-map/world-map.component */ "./src/app/dashboard-widget/world-map/world-map.component.ts");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -19460,6 +19474,7 @@ var DashboardWidgetModule = /** @class */ (function () {
                 _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"],
                 _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_15__["MatToolbarModule"],
                 _angular_material_list__WEBPACK_IMPORTED_MODULE_17__["MatListModule"],
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_26__["MatFormFieldModule"],
                 ng2_odometer__WEBPACK_IMPORTED_MODULE_19__["Ng2OdometerModule"],
                 angular_svg_round_progressbar__WEBPACK_IMPORTED_MODULE_22__["RoundProgressModule"],
                 _angular_material_menu__WEBPACK_IMPORTED_MODULE_7__["MatMenuModule"],
@@ -20052,7 +20067,7 @@ var RoundProgressbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div  class=\"sales-list mat-elevation-z4 \"  >\n    <mat-toolbar>\n        \n        <mat-toolbar-row>\n            <span>Sales List</span>\n            <span class=\"pull-right\"></span>\n            <button mat-icon-button>\n              <mat-icon (click)=\"reload();\" >refresh</mat-icon>\n            </button>\n           <button mat-icon-button [matMenuTriggerFor]=\"menu\">\n                  <mat-icon>more_vert</mat-icon>\n                </button>\n                <mat-menu #menu=\"matMenu\">\n                  <button mat-menu-item>\n                    <mat-icon>list</mat-icon>\n                    <span>List</span>\n                  </button>\n                  <button mat-menu-item>\n                    <mat-icon>print</mat-icon>\n                    <span>Print</span>\n                  </button>\n                </mat-menu>\n          </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-progress-bar *ngIf=\"showLoader\"\n          [color]=\"'primary'\"\n          [mode]=\"'indeterminate'\"\n          [value]=\"90\"\n          [bufferValue]=\"'10'\">\n      </mat-progress-bar>\n    <mat-list >\n    <mat-list-item *ngFor=\"let sale of sales\"   >\n        <img  matListAvatar [src]=\"sale.companyIcon\" alt=\"Image of {{sale.name}}\">\n        <h3  > {{sale.companyName}} </h3>\n        <span class=\"pull-right\"></span>\n        <mat-chip-list    >\n            <mat-chip  *ngIf=\"sale.star\" color=\"primary\" selected=\"true\" >\n                {{sale.star}} &nbsp; <mat-icon>star</mat-icon> \n            </mat-chip>\n            <mat-chip *ngIf=\"sale.watch\"  color=\"warn\" selected=\"true\" >\n                {{sale.watch}}  &nbsp;<mat-icon>remove_red_eye</mat-icon> \n            </mat-chip>\n            <mat-chip *ngIf=\"sale.fork\"  color=\"accent\" selected=\"true\" >\n                {{sale.fork}}  &nbsp;<mat-icon>content_copy</mat-icon> \n            </mat-chip>\n        </mat-chip-list>\n    </mat-list-item>\n</mat-list>\n\n</div>"
+module.exports = "<div  class=\"sales-list mat-elevation-z4 \"  >\n    <mat-toolbar>\n        \n        <mat-toolbar-row>\n                \n            <!-- <input type=\"text\"> \n            <span>Sales List</span>\n            <span class=\"pull-right\"></span>\n            <button mat-icon-button>\n              <mat-icon (click)=\"reload();\" >search</mat-icon>\n            </button>-->\n            <!--\n           <button mat-icon-button [matMenuTriggerFor]=\"menu\">\n                  <mat-icon>more_vert</mat-icon>\n                </button> -->\n                <!--\n                <mat-menu #menu=\"matMenu\">\n                  <button mat-menu-item>\n                    <mat-icon>list</mat-icon>\n                    <span>List</span>\n                  </button>\n                  <button mat-menu-item>\n                    <mat-icon>print</mat-icon>\n                    <span>Print</span>\n                  </button>\n                </mat-menu>\n            -->\n          </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-progress-bar *ngIf=\"showLoader\"\n          [color]=\"'primary'\"\n          [mode]=\"'indeterminate'\"\n          [value]=\"90\"\n          [bufferValue]=\"'10'\">\n      </mat-progress-bar>\n    <mat-list >\n    <mat-list-item *ngFor=\"let sale of sales\"   >\n        <img  matListAvatar [src]=\"sale.companyIcon\" alt=\"Image of {{sale.name}}\">\n        <h3  > {{sale.companyName}} </h3>\n        <span class=\"pull-right\"></span>\n        <mat-chip-list    >\n            <mat-chip  *ngIf=\"sale.star\" color=\"primary\" selected=\"true\" >\n                {{sale.star}} &nbsp; <mat-icon>star</mat-icon> \n            </mat-chip>\n            <mat-chip *ngIf=\"sale.watch\"  color=\"warn\" selected=\"true\" >\n                {{sale.watch}}  &nbsp;<mat-icon>remove_red_eye</mat-icon> \n            </mat-chip>\n            <mat-chip *ngIf=\"sale.fork\"  color=\"accent\" selected=\"true\" >\n                {{sale.fork}}  &nbsp;<mat-icon>content_copy</mat-icon> \n            </mat-chip>\n        </mat-chip-list>\n    </mat-list-item>\n</mat-list>\n\n</div>"
 
 /***/ }),
 
@@ -20092,6 +20107,62 @@ var SalesListComponent = /** @class */ (function () {
     function SalesListComponent() {
         this.showLoader = false;
         this.sales = [
+            {
+                companyIcon: 'https://www.bugsplat.com/images/icons/angular_icon_blue.png',
+                companyName: 'Codetok',
+                star: '20',
+                fork: false,
+                watch: false,
+            },
+            {
+                companyIcon: 'https://firebase.google.com/_static/4d0ad1dc9e/images/firebase/logo.png',
+                companyName: 'Firebase',
+                star: '2k',
+                fork: false,
+                watch: false,
+            },
+            {
+                companyIcon: 'https://crunchbase-production-res.cloudinary.com/image/upload/c_lpad,h_256,w_256,f_jpg/v1481031537/j9c8urpwe7uabwmt2qau.png',
+                companyName: 'Ionic',
+                star: false,
+                fork: false,
+                watch: 22,
+            },
+            {
+                companyIcon: 'https://www.gstatic.com/images/branding/product/2x/app_maker_64dp.png',
+                companyName: 'google dev',
+                star: false,
+                watch: false,
+                fork: '22',
+            },
+            {
+                companyIcon: 'https://www.bugsplat.com/images/icons/angular_icon_blue.png',
+                companyName: 'Codetok',
+                star: '20',
+                fork: false,
+                watch: false,
+            },
+            {
+                companyIcon: 'https://firebase.google.com/_static/4d0ad1dc9e/images/firebase/logo.png',
+                companyName: 'Firebase',
+                star: '2k',
+                fork: false,
+                watch: false,
+            },
+            {
+                companyIcon: 'https://crunchbase-production-res.cloudinary.com/image/upload/c_lpad,h_256,w_256,f_jpg/v1481031537/j9c8urpwe7uabwmt2qau.png',
+                companyName: 'Ionic',
+                star: false,
+                fork: false,
+                watch: 22,
+            },
+            {
+                companyIcon: 'https://www.gstatic.com/images/branding/product/2x/app_maker_64dp.png',
+                companyName: 'google dev',
+                star: false,
+                watch: false,
+                fork: '22',
+            },
             {
                 companyIcon: 'https://www.bugsplat.com/images/icons/angular_icon_blue.png',
                 companyName: 'Codetok',

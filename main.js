@@ -861,7 +861,7 @@ var menus = [
             {
                 'name': 'Carrito',
                 'icon': 'chat',
-                'link': 'chats/chat',
+                'link': 'pages/contact',
                 'open': false,
             },
             {
@@ -879,7 +879,7 @@ var menus = [
             {
                 'name': 'Consultas',
                 'icon': 'view_list',
-                'link': 'editor/editor',
+                'link': 'dashboard',
                 'open': false,
             }
         ]
@@ -1650,7 +1650,8 @@ var routes = [
     { path: 'register', loadChildren: '../register/register.module#RegisterModule' },
     { path: 'login', loadChildren: '../pages/login/login.module#LoginModule' },
     // {path: 'editor', loadChildren: '../editor/editor.module#EditorModule'},
-    { path: '**', redirectTo: 'auth/dashboard' },
+    //{path: '**', redirectTo: 'auth/dashboard'},
+    { path: '**', redirectTo: 'auth/pages/contact' },
 ];
 var LazyLoadModule = /** @class */ (function () {
     function LazyLoadModule() {
