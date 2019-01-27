@@ -667,6 +667,295 @@ var SidemenuItemComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menus", function() { return menus; });
 var menus = [
+    /*{
+        'name': 'Ventas',
+        'icon': 'dashboard',
+        'link': false,
+        'open': false,
+        'chip': { 'value': 1, 'color': 'accent' },
+        'sub': [
+            {
+                'name': 'Dashboard',
+                'link': '/auth/dashboard',
+                'icon': 'dashboard',
+                'chip': false,
+                'open': true,
+            }
+        ]
+    },
+    {
+        'name': 'Material Widget',
+        'icon': 'widgets',
+        'link': false,
+        'open': false,
+        'sub': [
+            {
+                'name': 'Buttons',
+                'link': 'material-widgets/buttons',
+                'icon': 'indeterminate_check_box',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'List',
+                'link': 'material-widgets/list',
+                'icon': 'list',
+                'chip': false,
+                'open': false,
+            },
+            {
+
+                'name': 'Stepper',
+                'link': 'material-widgets/stepper',
+                'icon': 'view_week',
+                'chip': false,
+                'open': false,
+
+            },
+            {
+                'name': 'Expansion',
+                'link': 'material-widgets/expansion',
+                'icon': 'web_aaset',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Progress Spinner',
+                'link': 'material-widgets/spinner',
+                'icon': 'cached',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Cards',
+                'link': 'material-widgets/cards',
+                'icon': 'crop_16_9',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Icons',
+                'link': 'material-widgets/icons',
+                'icon': 'gif',
+                'chip': false,
+                'open': false,
+            },
+            {
+
+                'name': 'AutoComplete',
+                'link': 'material-widgets/autocomplete',
+                'icon': 'get_app',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'CheckBox',
+                'link': 'material-widgets/checkbox',
+                'icon': 'check_box',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'DatePicker',
+                'link': 'material-widgets/datepicker',
+                'icon': 'date_range',
+                'chip': false,
+                'open': false,
+            },
+
+            {
+                'name': 'Slider',
+                'link': 'material-widgets/slider',
+                'icon': 'keyboard_tab',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Slide Toggle',
+                'link': 'material-widgets/slide-toggle',
+                'icon': 'album',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Menu',
+                'icon': 'menu',
+                'link': 'material-widgets/menu',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Progress Bar',
+                'link': 'material-widgets/progress-bar',
+                'icon': 'trending_flat',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Input',
+                'icon': 'input',
+                'link': 'material-widgets/input',
+                'open': false,
+            },
+            {
+                'name': 'Radio',
+                'icon': 'radio_button_checked',
+                'link': 'material-widgets/radio',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Select',
+                'icon': 'select_all',
+                'link': 'material-widgets/select',
+                'open': false,
+            },
+        ]
+    },
+    {
+        'name': 'Tables',
+        'icon': 'list',
+        'link': false,
+        'open': false,
+        'chip': { 'value': 2, 'color': 'accent' },
+        'sub': [
+            {
+                'name': 'Fixed',
+                'icon': 'filter_list',
+                'link': 'tables/fixed',
+                'open': false,
+            },
+            {
+                'name': 'Feature',
+                'icon': 'done_all',
+                'link': 'tables/featured',
+                'open': false,
+            },
+            {
+                'name': 'Responsive Tables',
+                'icon': 'filter_center_focus',
+                'link': 'tables/responsive',
+                'open': false,
+            }
+        ]
+
+    },
+    {
+        'name': 'Guarded Routes',
+        'icon': 'mode_edit',
+        'link': '/auth/guarded-routes',
+        'open': false,
+    }, {
+        'name': 'Scrumboard',
+        'open': false,
+        'link': '/auth/scrumboard',
+        'icon': 'grade',
+    },
+    */
+    {
+        'name': 'Ventas',
+        'icon': 'view_module',
+        'open': false,
+        'link': false,
+        'sub': [
+            {
+                'name': 'Carrito',
+                'icon': 'chat',
+                'link': 'chats/chat',
+                'open': false,
+            },
+            {
+                'name': 'Productos',
+                'icon': 'mail',
+                'link': 'mail/mail',
+                'open': false,
+            },
+            {
+                'name': 'Clientes',
+                'icon': 'editor',
+                'link': 'editor/editor',
+                'open': false,
+            },
+            {
+                'name': 'Consultas',
+                'icon': 'view_list',
+                'link': 'editor/editor',
+                'open': false,
+            }
+        ]
+    },
+    {
+        'name': 'Nómina',
+        'icon': 'content_copy',
+        'open': false,
+        'link': false,
+        'sub': [
+            {
+                'name': 'Colaboradores',
+                'icon': 'work',
+                'open': false,
+                'link': '../login',
+            }, {
+                'name': 'Emision',
+                'icon': 'local_laundry_service',
+                'open': false,
+                'link': 'pages/services',
+            }, {
+                'name': 'Registro E/S',
+                'icon': 'directions',
+                'open': false,
+                'link': 'pages/contact'
+            }
+        ]
+    },
+    {
+        'name': 'Trainning',
+        'icon': 'pie_chart_outlined',
+        'open': false,
+        'link': false,
+        'sub': [
+            {
+                'name': 'Aula virtual',
+                'icon': 'view_list',
+                'link': 'charts/chartjs',
+                'open': false,
+            },
+            {
+                'name': 'Instructores',
+                'icon': 'show_chart',
+                'open': false,
+                'link': 'charts/ngx-charts',
+            },
+            {
+                'name': 'Alta cursos',
+                'icon': 'pie_chart',
+                'open': false,
+                'link': 'charts/nvd3-charts',
+            }
+        ]
+    },
+    {
+        'name': 'Config',
+        'open': false,
+        'link': false,
+        'icon': 'grade',
+        'sub': [
+            {
+                'name': 'Empresa',
+                'icon': 'chat',
+                'link': 'chats/chat',
+                'open': false,
+            },
+            {
+                'name': 'Certificados',
+                'icon': 'mail',
+                'link': 'mail/mail',
+                'open': false,
+            }
+        ]
+    }
+];
+/*export const menus = [
     {
         'name': 'Dashboard',
         'icon': 'dashboard',
@@ -704,11 +993,13 @@ var menus = [
                 'open': false,
             },
             {
+
                 'name': 'Stepper',
                 'link': 'material-widgets/stepper',
                 'icon': 'view_week',
                 'chip': false,
                 'open': false,
+
             },
             {
                 'name': 'Expansion',
@@ -739,6 +1030,7 @@ var menus = [
                 'open': false,
             },
             {
+
                 'name': 'AutoComplete',
                 'link': 'material-widgets/autocomplete',
                 'icon': 'get_app',
@@ -759,6 +1051,7 @@ var menus = [
                 'chip': false,
                 'open': false,
             },
+
             {
                 'name': 'Slider',
                 'link': 'material-widgets/slider',
@@ -854,6 +1147,7 @@ var menus = [
                 'open': false,
             }
         ]
+
     },
     {
         'name': 'Guarded Routes',
@@ -890,8 +1184,8 @@ var menus = [
                 'open': false,
             }
         ]
-    },
-    {
+    }
+    , {
         'name': 'Pages',
         'icon': 'content_copy',
         'open': false,
@@ -914,8 +1208,9 @@ var menus = [
                 'link': 'pages/contact'
             }
         ]
-    },
-    {
+    }
+    , {
+
         'name': 'Charts',
         'icon': 'pie_chart_outlined',
         'open': false,
@@ -926,6 +1221,7 @@ var menus = [
                 'icon': 'view_list',
                 'link': 'charts/chartjs',
                 'open': false,
+
             },
             {
                 'name': 'ngx-chart',
@@ -960,7 +1256,7 @@ var menus = [
             }
         ]
     }
-];
+];*/
 
 
 /***/ }),
@@ -972,7 +1268,7 @@ var menus = [
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<perfect-scrollbar style=\"height: calc(100% - 33px);\">\n    <div fxLayout=\"column\" >\n        <div *ngIf=\"!iconOnly\" fxLayoutAlign=\"space-around center\" [style.margin]=\"'10px 0px'\" >\n          <img width=\"100\" [style.borderRadius]=\"'50%'\" src=\"./assets/user-image.jpg\">\n        </div>\n        <div *ngIf=\"iconOnly\" style=\"height: 100px;\" fxLayoutAlign=\"space-around center\"  >\n            <img width=\"50\" [style.borderRadius]=\"'50%'\" src=\"./assets/user-image.jpg\">\n        </div>\n        <cdk-sidemenu-item *ngFor=\"let menu of menus\" [menu]=\"menu\" [iconOnly]=\"iconOnly\"> </cdk-sidemenu-item>\n    </div>\n    \n</perfect-scrollbar>\n"
+module.exports = "\n<perfect-scrollbar style=\"height: calc(100% - 33px);\">\n    <div fxLayout=\"column\" >\n        <div *ngIf=\"!iconOnly\" fxLayoutAlign=\"space-around center\" [style.margin]=\"'10px 0px'\" >\n          <img width=\"100\" [style.borderRadius]=\"'50%'\" src=\"./assets/pages/ecommerce.png\">\n        </div>\n        <div *ngIf=\"iconOnly\" style=\"height: 100px;\" fxLayoutAlign=\"space-around center\"  >\n            <img width=\"50\" [style.borderRadius]=\"'50%'\" src=\"./assets/pages/ecommerce.png\">\n        </div>\n        <cdk-sidemenu-item *ngFor=\"let menu of menus\" [menu]=\"menu\" [iconOnly]=\"iconOnly\"> </cdk-sidemenu-item>\n    </div>\n    \n</perfect-scrollbar>\n"
 
 /***/ }),
 
