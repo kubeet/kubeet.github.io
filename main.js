@@ -1424,7 +1424,7 @@ var ToolbarNotificationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <stbui-loading *ngIf=\"showLoading\"></stbui-loading> -->\n<mat-toolbar   class=\"mat-elevation-z4\">  \n\t<button mat-icon-button (click)=\"sidenav.toggle();drawer.toggle();\" *ngIf=\"matDrawerShow\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button> \n    <button mat-icon-button (click)=\"sidenav.toggle();\" *ngIf=\"!matDrawerShow\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button>\n\n    <span class=\"spacer\"></span>\n\n    <button  mat-icon-button (click)=\"searchOpen = !searchOpen\" fxHide=\"false\" [fxHide.gt-xs]=\"false\">\n        <i class=\"material-icons\">search</i>\n    </button>\n    <cdk-search-bar [open]=\"searchOpen\"></cdk-search-bar>\n\n    <cdk-fullscreen></cdk-fullscreen>\n\n    <!--\n    <cdk-toolbar-notification [notifications]=\"toolbarHelpers?.notifications\"></cdk-toolbar-notification>\n    -->\n    <cdk-user-menu [currentUser]=\"toolbarHelpers?.currentUser\"></cdk-user-menu>\n    \n    <!--\n     <button mat-icon-button (click)=\"sidebar.toggle();\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button>\n-->\n</mat-toolbar>"
+module.exports = "<!-- <stbui-loading *ngIf=\"showLoading\"></stbui-loading> -->\n<mat-toolbar   class=\"mat-elevation-z4\">  \n\t<button mat-icon-button (click)=\"sidenav.toggle();drawer.toggle();\" *ngIf=\"matDrawerShow\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button> \n    <button mat-icon-button (click)=\"sidenav.toggle();\" *ngIf=\"!matDrawerShow\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button>\n\n    <span class=\"spacer\"></span>\n\n    <button  mat-icon-button (click)=\"searchOpen = !searchOpen\" fxHide=\"false\" [fxHide.gt-xs]=\"false\">\n        <i class=\"material-icons\">search</i>\n    </button>\n    <cdk-search-bar [open]=\"searchOpen\"></cdk-search-bar>\n    \n    <button mat-icon-button (click)=\"navCar();\">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \n    \n        <mat-icon>add_shopping_cart</mat-icon>\n     </button>\n     <a matLine >(3)</a>\n\n    <cdk-fullscreen></cdk-fullscreen>\n\n    <!--\n    <cdk-toolbar-notification [notifications]=\"toolbarHelpers?.notifications\"></cdk-toolbar-notification>\n    -->\n    <cdk-user-menu [currentUser]=\"toolbarHelpers?.currentUser\"></cdk-user-menu>\n    \n    <!--\n     <button mat-icon-button (click)=\"sidebar.toggle();\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button>\n-->\n</mat-toolbar>"
 
 /***/ }),
 
@@ -1451,6 +1451,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToolbarComponent", function() { return ToolbarComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _toolbar_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toolbar.helpers */ "./src/app/core/toolbar/toolbar.helpers.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1462,12 +1463,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var ToolbarComponent = /** @class */ (function () {
-    function ToolbarComponent() {
+    function ToolbarComponent(_router) {
+        this._router = _router;
         this.searchOpen = false;
         this.toolbarHelpers = _toolbar_helpers__WEBPACK_IMPORTED_MODULE_1__["ToolbarHelpers"];
     }
     ToolbarComponent.prototype.ngOnInit = function () {
+    };
+    ToolbarComponent.prototype.navCar = function () {
+        //	alert("navigate...");
+        this._router.navigate(['/auth/pages/about']);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -1491,7 +1498,7 @@ var ToolbarComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./toolbar.component.html */ "./src/app/core/toolbar/toolbar.component.html"),
             styles: [__webpack_require__(/*! ./toolbar.component.scss */ "./src/app/core/toolbar/toolbar.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], ToolbarComponent);
     return ToolbarComponent;
 }());
