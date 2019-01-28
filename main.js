@@ -394,7 +394,7 @@ var FullscreenComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-form-field class=\"search\"  [ngClass]=\"{'search-open': open == true}\"> \n  <input matInput placeholder=\"Search\" autocomplete=\"off\" (focus)=\"bigMenu = true\" (focusout)=\"bigMenu = false\">\n</mat-form-field>"
+module.exports = "<mat-form-field class=\"search\"  [ngClass]=\"{'search-open': open == true}\"> \n  <input matInput placeholder=\"Buscar productos\" autocomplete=\"off\" (focus)=\"bigMenu = true\" (focusout)=\"bigMenu = false\">\n</mat-form-field>"
 
 /***/ }),
 
@@ -1424,7 +1424,7 @@ var ToolbarNotificationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <stbui-loading *ngIf=\"showLoading\"></stbui-loading> -->\n<mat-toolbar   class=\"mat-elevation-z4\">  \n\t<button mat-icon-button (click)=\"sidenav.toggle();drawer.toggle();\" *ngIf=\"matDrawerShow\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button> \n    <button mat-icon-button (click)=\"sidenav.toggle();\" *ngIf=\"!matDrawerShow\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button>\n\n    <span class=\"spacer\"></span>\n\n    <button  mat-icon-button (click)=\"searchOpen = !searchOpen\" fxHide=\"true\" [fxHide.gt-xs]=\"false\">\n        <i class=\"material-icons\">search</i>\n    </button>\n    <cdk-search-bar [open]=\"searchOpen\"></cdk-search-bar>\n\n    <cdk-fullscreen></cdk-fullscreen>\n\n    <cdk-toolbar-notification [notifications]=\"toolbarHelpers?.notifications\"></cdk-toolbar-notification>\n\n    <cdk-user-menu [currentUser]=\"toolbarHelpers?.currentUser\"></cdk-user-menu>\n    \n     <button mat-icon-button (click)=\"sidebar.toggle();\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button>\n    \n</mat-toolbar>"
+module.exports = "<!-- <stbui-loading *ngIf=\"showLoading\"></stbui-loading> -->\n<mat-toolbar   class=\"mat-elevation-z4\">  \n\t<button mat-icon-button (click)=\"sidenav.toggle();drawer.toggle();\" *ngIf=\"matDrawerShow\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button> \n    <button mat-icon-button (click)=\"sidenav.toggle();\" *ngIf=\"!matDrawerShow\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button>\n\n    <span class=\"spacer\"></span>\n\n    <button  mat-icon-button (click)=\"searchOpen = !searchOpen\" fxHide=\"false\" [fxHide.gt-xs]=\"false\">\n        <i class=\"material-icons\">search</i>\n    </button>\n    <cdk-search-bar [open]=\"searchOpen\"></cdk-search-bar>\n\n    <cdk-fullscreen></cdk-fullscreen>\n\n    <!--\n    <cdk-toolbar-notification [notifications]=\"toolbarHelpers?.notifications\"></cdk-toolbar-notification>\n    -->\n    <cdk-user-menu [currentUser]=\"toolbarHelpers?.currentUser\"></cdk-user-menu>\n    \n    <!--\n     <button mat-icon-button (click)=\"sidebar.toggle();\">\n        <i class=\"material-icons app-toolbar-menu\">menu </i>\n    </button>\n-->\n</mat-toolbar>"
 
 /***/ }),
 
