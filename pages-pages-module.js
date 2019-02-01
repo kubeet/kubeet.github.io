@@ -95,7 +95,7 @@ var AboutComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n\t\t\n\n\n\t\t\t<div fxFlex=\"100\" fxLayout=\"column\" fxLayoutAlign=\"space-between stretch\" class=\"contact-list-container\">\n\t\t\t\t\n\t\t\n\t\t\t\t\t\t<div class=\"contact-list\">\n\t\t\t\t\n\t\t\t\t\t\t\t<div fxLayout=\"row\" *ngFor=\"let employee of employees\" fxLayoutAlign=\"space-around none\" class=\"mat-ripple\"  >\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t<div fxFlex=\"20\">\n\t\t\t\t\t\t\t<img class=\"avatar\" src=\"{{employee?.image}}\">\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div fxFlex=\"80\">\n\t\t\t\t\t\t\t<!--\n\t\t\t\t\t\t\t<h3 class=\"mat-subheading-1\" > <b> {{employee?.name}} </b> </h3>\n\t\t\t\t\t\t\t-->\n\t\t\t\t\t\t\t<p class=\"mat-body-1\" >\n\t\t\t\t\t\t\t\t\tBy {{employee?.name}} \n\t\t\t\t\t\t\t\t</p>\n\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t   <p class=\"mat-body-1\" >\n\t\t\t\t\t\t\t      By {{employee?.provider}} \n\t\t\t\t\t\t\t\t</p>\n\n\t\t\t\t\t\t\t\t<p class=\"mat-body-1\" >\n\t\t\t\t\t\t\t\t\tPrecio : $<b> {{employee?.price}} </b> - Stock ( {{employee?.stock}} )\n\t\t\t\t\t\t\t\t  </p>\n\t\t \n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<mat-form-field style=\"width:40px !important\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"number\" id=\"cantidad\" \n\t\t\t\t\t\t\t\t\t\t\tclass=\"input\" placeholder=\"Cant\"\n\t\t\t\t\t\t\t\t\t\t\tvalue=\"1\"\n\t\t\t\t\t\t\t\t\t\tformControlName=\"cantidad\" required matInput>\n\n\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t \t  <button mat-icon-button>\n\t\t\t\t\t\t\t\t\t\t\t <mat-icon>add_shopping_cart</mat-icon>\n\t\t\t\t\t\t\t\t\t\t  </button>\n\t\t\t\t\t\t\t\t\t\t  <a matLine >Comprar</a>\n\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t</div>\n\n\t\n\t\t\t\n    \t\t</div>\n\n\n\t\n</div>\n"
+module.exports = "\n\n<div fxLayout=\"row\" fxLayout=\"row wrap\">\n\t\t\n\n\n\t\t\t<div fxFlex=\"100\" fxLayout=\"column\" fxLayoutAlign=\"space-between stretch\" class=\"contact-list-container\">\n\t\t\t\t\n\t\t\n\t\t\t\t\t\t<div class=\"contact-list\">\n\t\t\t\t\n\t\t\t\t\t\t\t<div fxLayout=\"row\" *ngFor=\"let employee of employees\" fxLayoutAlign=\"space-around none\" class=\"mat-ripple\"  >\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t<div fxFlex=\"20\">\n\t\t\t\t\t\t\t<img class=\"avatar\" src=\"{{employee?.urlimage}}\">\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div fxFlex=\"80\">\n\t\t\t\t\t\t\t<!--\n\t\t\t\t\t\t\t<h3 class=\"mat-subheading-1\" > <b> {{employee?.name}} </b> </h3>\n\t\t\t\t\t\t\t-->\n\t\t\t\t\t\t\t<p class=\"mat-body-1\" >\n\t\t\t\t\t\t\t\t\tBy {{employee?.name}} \n\t\t\t\t\t\t\t\t</p>\n\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t   <p class=\"mat-body-1\" >\n\t\t\t\t\t\t\t      By {{employee?.provider}} \n\t\t\t\t\t\t\t\t</p>\n\n\t\t\t\t\t\t\t\t<p class=\"mat-body-1\" >\n\t\t\t\t\t\t\t\t\tPrecio : $<b> {{employee?.price}} </b> - Stock ( {{employee?.exists}} )\n\t\t\t\t\t\t\t\t  </p>\n\t\t \n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<mat-form-field style=\"width:40px !important\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"number\" id=\"cantidad\" \n\t\t\t\t\t\t\t\t\t\t\tclass=\"input\" placeholder=\"Cant\"\n\t\t\t\t\t\t\t\t\t\t\tvalue=\"1\"\n\t\t\t\t\t\t\t\t\t\tformControlName=\"cantidad\" required matInput>\n\n\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t \t  <button mat-icon-button>\n\t\t\t\t\t\t\t\t\t\t\t <mat-icon>add_shopping_cart</mat-icon>\n\t\t\t\t\t\t\t\t\t\t  </button>\n\t\t\t\t\t\t\t\t\t\t  <a matLine >Comprar</a>\n\n\n\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t</div>\n\n\t\n\t\t\t\n    \t\t</div>\n\n\n\t\n</div>\n"
 
 /***/ }),
 
@@ -121,6 +121,7 @@ module.exports = ".full {\n  width: 100%; }\n\n.contact-list-container {\n  back
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactComponent", function() { return ContactComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _product_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product.service */ "./src/app/pages/contact/product.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -131,42 +132,58 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ContactComponent = /** @class */ (function () {
-    function ContactComponent() {
+    // subscriptionCreate: Subscription;
+    // subscriptionEdit: Subscription;
+    // $subcriptionGetUnitSafeties:Subscription;
+    function ContactComponent(productService) {
+        this.productService = productService;
         this.checked = false;
         this.indeterminate = false;
-        this.employees = [
-            { name: 'Apple iPhone 6S Plus, GSM Unlocked, 64GB - Space Gray (Refurbished)',
-                provider: 'Apple',
-                price: '7,500.00',
-                stock: 3,
-                image: 'assets/iphone.jpg' },
-            {
-                //name: 'Dell PowerEdge T30 Tower Server - Intel Xeon E3-1225 v5 Quad-Core Processor up to 3.7 GHz, 16GB DDR4 Memory, 2TB (RAID 1) SATA Hard Drive, Intel HD Graphics P530, DVD Burner, No Operating System', 
-                name: 'Dell PowerEdge T30 Tower Server - Intel Xeon E3-1225 v5 Quad-Core Processor up to 3.7 GHz',
-                provider: 'Dell',
-                price: '35,240.00',
-                stock: 5,
-                image: 'assets/server.jpg'
-            },
-            { name: 'Apple 13 Inch MacBook Air Laptop (1.8GHz Intel Core i5 Dual Core Processor',
-                provider: 'Apple',
-                price: '14,500',
-                stock: 6,
-                image: 'assets/mac.jpg' },
-            { name: 'Xbox One S 1TB Console - Starter BundleXbox One',
-                provider: 'Microsoft',
-                price: '8,200.00',
-                stock: 11,
-                image: 'assets/xbox.jpg' },
-            { name: 'Apple Mac Pro desktop (3.5GHz 6-Core Intel Xeon E5, 16GB RAM, 256GB Flash)',
-                provider: 'Apple',
-                price: '16,500.00',
-                stock: 9,
-                image: 'assets/macpro.jpg' },
-        ];
+        this.employees = [];
+        /*
+        this.subscriptionCreate = productService.createClient$.subscribe(
+          state => {
+            console.info(state);
+          
+           });
+      
+      
+        this.subscriptionEdit = productService.updateClient$.subscribe(
+          client => {
+            console.info(client);
+          
+            });
+            */
     }
     ContactComponent.prototype.ngOnInit = function () {
+        this.getProductsData();
+    };
+    ContactComponent.prototype.getProductsData = function () {
+        // this.$subcriptionGetUnitSafeties = this.productService.retrieveDataForTable()
+        var _this = this;
+        this.productService.retrieveDataForTable()
+            .subscribe(function (res) {
+            console.log(res);
+            var body = JSON.parse(res['_body']);
+            var dataToSetup = body;
+            console.log('products ...');
+            _this.employees = dataToSetup;
+            //console.log(this.arrDrivers);
+            console.log(_this.employees);
+            // this.gridOptions.api.setRowData(dataToSetup);
+            // this.tableCount = dataToSetup.length;
+            setTimeout(function () {
+                // console.info("Resize columns");
+                //   this.gridApi.sizeColumnsToFit();
+            }, 200);
+        }, function (err) {
+            console.info(err);
+            //this.gridOptions.api.setRowData([]);
+            // this.gridApi.sizeColumnsToFit();
+            alert("An error has occurred, check your browser console");
+        });
     };
     ContactComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -174,7 +191,7 @@ var ContactComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./contact.component.html */ "./src/app/pages/contact/contact.component.html"),
             styles: [__webpack_require__(/*! ./contact.component.scss */ "./src/app/pages/contact/contact.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_product_service__WEBPACK_IMPORTED_MODULE_1__["ProductService"]])
     ], ContactComponent);
     return ContactComponent;
 }());

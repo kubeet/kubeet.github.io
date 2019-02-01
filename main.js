@@ -157,12 +157,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lazy_load_lazy_load_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lazy-load/lazy-load.module */ "./src/app/lazy-load/lazy-load.module.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./core/core.module */ "./src/app/core/core.module.ts");
+/* harmony import */ var _pages_contact_product_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/contact/product.service */ "./src/app/pages/contact/product.service.ts");
+/* harmony import */ var _shared_providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared/providers/rest-api/api.crud.service */ "./src/app/shared/providers/rest-api/api.crud.service.ts");
+/* harmony import */ var _shared_providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/providers/rest-api/constants */ "./src/app/shared/providers/rest-api/constants.ts");
+/* harmony import */ var _shared_services_storage_storage_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared/services/storage/storage.service */ "./src/app/shared/services/storage/storage.service.ts");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
 
 
 
@@ -179,11 +189,12 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+                _angular_http__WEBPACK_IMPORTED_MODULE_10__["HttpModule"],
                 _lazy_load_lazy_load_module__WEBPACK_IMPORTED_MODULE_3__["LazyLoadModule"],
                 _core_core_module__WEBPACK_IMPORTED_MODULE_5__["CoreModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"]
             ],
-            providers: [],
+            providers: [_shared_providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_7__["ApiCrudService"], _shared_providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_8__["Constants"], _shared_services_storage_storage_service__WEBPACK_IMPORTED_MODULE_9__["StorageService"], _pages_contact_product_service__WEBPACK_IMPORTED_MODULE_6__["ProductService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
     ], AppModule);
@@ -1676,6 +1687,381 @@ var LazyLoadModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pages/contact/product.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/pages/contact/product.service.ts ***!
+  \**************************************************/
+/*! exports provided: ProductService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductService", function() { return ProductService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/providers/rest-api/constants */ "./src/app/shared/providers/rest-api/constants.ts");
+/* harmony import */ var _shared_providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/providers/rest-api/api.crud.service */ "./src/app/shared/providers/rest-api/api.crud.service.ts");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+//import { User } from '../../../../shared/models/user.model';
+//import { ViajeModel } from '../../../../shared/models/despacho/viaje.model';
+//import {OrderStatus} from "../../../../shared/models/despacho/orderstatus.model";
+
+/**
+ * Created by Tech Group BWL on 30/05/2018.
+ */
+var ProductService = /** @class */ (function () {
+    // private showCreateClient = new Subject<void>();
+    // createClient$ = this.showCreateClient.asObservable();
+    // private showUpdateClient = new Subject<any>();
+    //  updateClient$ = this.showUpdateClient.asObservable();
+    function ProductService(api, C) {
+        this.api = api;
+        this.C = C;
+        this.ENDPOINT = '';
+        this.ENDPOINTPRODUCTS = 'products';
+        // this.api.DOMAIN = 'assets/data/';//TODO: quitame cuando ya exista una api oficial
+    }
+    ProductService.prototype.retrieveDataForTable = function (params) {
+        var shareGet;
+        if (params) {
+            // shareGet = this.api.get('data.json', params).share();
+            //TODO: descomentame cuando ya exista una api oficial
+            shareGet = this.api.get(this.ENDPOINTPRODUCTS, params);
+        }
+        else {
+            // shareGet = this.api.get('data.json').share();
+            //TODO: descomentame cuando ya exista una api oficial
+            shareGet = this.api.get(this.ENDPOINTPRODUCTS);
+        }
+        shareGet.map(function (res) { return res.json(); });
+        return shareGet;
+    };
+    ProductService.prototype.getDataForTableFilter = function (params) {
+        var shareGet;
+        shareGet = this.api.get(this.ENDPOINT, params).share();
+    };
+    ProductService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_shared_providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_2__["ApiCrudService"],
+            _shared_providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_1__["Constants"]])
+    ], ProductService);
+    return ProductService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/providers/rest-api/api.crud.service.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/shared/providers/rest-api/api.crud.service.ts ***!
+  \***************************************************************/
+/*! exports provided: ApiCrudService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApiCrudService", function() { return ApiCrudService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./src/app/shared/providers/rest-api/constants.ts");
+/* harmony import */ var _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/storage/storage.service */ "./src/app/shared/services/storage/storage.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Created by Tech Group BWL on 08/05/2018.
+ */
+var ApiCrudService = /** @class */ (function () {
+    function ApiCrudService(http, C, _storage) {
+        this.http = http;
+        this.C = C;
+        this._storage = _storage;
+        this.DOMAIN = this.C.DOMAIN;
+    }
+    /**
+     * Allows to use http get sending only params as a unique option or
+     * custom RequestOptions.
+     *
+     * @param endpoint
+     * @param params: It should be [{param: string, val: string|number}, ...]
+     * @param options
+     * @returns {Observable<Response>}
+     */
+    ApiCrudService.prototype.get = function (endpoint, params, options) {
+        if (params) {
+            var p_1 = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["URLSearchParams"]();
+            params.forEach(function (param) { p_1.set(param['param'], param['val']); });
+            options = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ params: p_1 });
+        }
+        else if (!options) {
+            options = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]();
+        }
+        // console.log('ruta ',this.DOMAIN + '/' + endpoint, options);
+        return this.http.get(this.DOMAIN + '/' + endpoint, options);
+    };
+    /**
+     * Allows to use http post.
+     *
+     * @param endpoint
+     * @param body
+     * @param options
+     * @returns {Observable<Response>}
+     */
+    ApiCrudService.prototype.post = function (endpoint, body, options) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Accept', 'application/json');
+        var myoptions = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: headers });
+        return this.http.post(this.DOMAIN + '/' + endpoint, body, myoptions);
+    };
+    /**
+     * Allows to use http patch as goal to edit an specific field of
+     * the endpoint.
+     *
+     * @param endpoint
+     * @param body
+     * @param options
+     * @returns {Observable<Response>}
+     */
+    ApiCrudService.prototype.patch = function (endpoint, body, options) {
+        return this.http.patch(this.DOMAIN + '/' + endpoint, body, options);
+    };
+    /**
+     * Allows to use http put as goal to edit all data of the endpoint.
+     *
+     * @param endpoint
+     * @param body
+     * @param options
+     * @returns {Observable<Response>}
+     */
+    ApiCrudService.prototype.put = function (endpoint, body, options) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Accept', 'application/json');
+        var myoptions = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: headers });
+        return this.http.put(this.DOMAIN + '/' + endpoint, body, myoptions);
+    };
+    /**
+     * Allows to use http delete as goal to edit all data of the endpoint.
+     *
+     * @param endpoint
+     * @param options
+     * @returns {Observable<Response>}
+     */
+    ApiCrudService.prototype.remove = function (endpoint, options) {
+        return this.http.delete(this.DOMAIN + '/' + endpoint, options);
+    };
+    ApiCrudService.prototype.getOptions = function () {
+        var auth = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({ 'Authorization': 'Bearer ' + this._storage.getSession(this.C.USER_DATA_KEY) });
+        var options = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: auth });
+        return options;
+    };
+    ApiCrudService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"], _constants__WEBPACK_IMPORTED_MODULE_2__["Constants"], _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_3__["StorageService"]])
+    ], ApiCrudService);
+    return ApiCrudService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/providers/rest-api/constants.ts":
+/*!********************************************************!*\
+  !*** ./src/app/shared/providers/rest-api/constants.ts ***!
+  \********************************************************/
+/*! exports provided: Constants */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Constants", function() { return Constants; });
+/**
+ * Created by Tech Group BWL on 08/05/2018.
+ */
+var Constants = /** @class */ (function () {
+    function Constants() {
+        // DOMAIN: string = "http://motum.mocklab.io/admin";
+        // DOMAIN: string = "http://192.168.0.150:10012/api/v1";
+        //  DOMAIN: string = "http://landcserver.dyndns.org:10012/api/v1";
+        this.DOMAIN = "https://delta-trees-222021.appspot.com";
+        this.ENDPOINT_USER = "users"; //todo: remove this line
+        this.EVENTS_SERVICE = {
+            SIDEBAR_MENU_ITEM_TOGGLE: 'sidebar:menu:item:toggle',
+            BREADCRUMB_SET_MANUAL_BREAD: 'breadcrumb:set:buttonBack',
+            COMPANY_NAME: 'baPageTop:set:breadcrumb',
+            MONITORING_REACTION_MENU_CHANGE_CLASS: 'monitoringReaction:menu:changeClass',
+            MONITORING_REACTION_MENU_CHANGE_CLASS_2_1: 'maintenance:menu:changeClas',
+            MONITORING_REACTION_CHAT_DETAIL: 'monitoringReaction:chat:detail',
+            BA_MENU_ITEM_TO_APPLICATIONS_MENU_DATA: "BaMenuItem:applications-menu:data",
+            BA_MENU_ITEM_TO_APPLICATIONS_MENU_TOGGLE: "BaMenuItem:applications-menu:toggle",
+            APPLICATIONS_MENU_TO_BA_MENU_STATUS: "ApplicationsMenu:ba-menu:status",
+            RETURN_THE_URL_TO_A_PREVIOUS: "breadcrumb:set:buttonback",
+            LOG_ALERTS_RETURN_BUTTON_TOGGLE: "AlertLogs:ButtonBack:toggle"
+        };
+        this.MAP_STYLES = [
+            {
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#444444"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#f2f2f2"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "saturation": -100
+                    },
+                    {
+                        "lightness": 45
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#16d7ff"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            }
+        ];
+        this.USER_DATA_KEY = 'user_data_key';
+        //GOOGLE_MAPS_API_KEY = environment.googleMapsKey;
+        this.COMPASS_DIR = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+    }
+    return Constants;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/storage/storage.service.ts":
+/*!************************************************************!*\
+  !*** ./src/app/shared/services/storage/storage.service.ts ***!
+  \************************************************************/
+/*! exports provided: StorageService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StorageService", function() { return StorageService; });
+/**
+ * Created by Tech Group BWL on 25/07/2018.
+ */
+var StorageService = /** @class */ (function () {
+    function StorageService() {
+    }
+    StorageService.prototype.setSession = function (key, obj) {
+        sessionStorage.setItem(key, JSON.stringify(obj));
+    };
+    StorageService.prototype.getSession = function (key) {
+        var obj = sessionStorage.getItem(key);
+        return obj ? JSON.parse(obj) : null;
+    };
+    StorageService.prototype.sessionDeleteAll = function () {
+        sessionStorage.clear();
+    };
+    StorageService.prototype.sessionDeleteByKey = function (key) {
+        sessionStorage.removeItem(key);
+    };
+    StorageService.prototype.setLocal = function (key, obj) {
+        localStorage.setItem(key, JSON.stringify(obj));
+    };
+    StorageService.prototype.getLocal = function (key) {
+        var obj = localStorage.getItem(key);
+        return obj ? JSON.parse(obj) : null;
+    };
+    StorageService.prototype.localDeleteAll = function () {
+        localStorage.clear();
+    };
+    StorageService.prototype.localDeleteByKey = function (key) {
+        localStorage.removeItem(key);
+    };
+    return StorageService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -1738,7 +2124,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/adsoft/Desktop/itesm_ene_may_2019/cdk-admin/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/adsoft/Desktop/kubeetplatform/kubeet-frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -580,8 +580,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/adsoft/Desktop/itesm_ene_may_2019/cdk-admin/src/theme/theme.scss */"./src/theme/theme.scss");
-module.exports = __webpack_require__(/*! /home/adsoft/Desktop/itesm_ene_may_2019/cdk-admin/src/theme/typography.scss */"./src/theme/typography.scss");
+__webpack_require__(/*! /home/adsoft/Desktop/kubeetplatform/kubeet-frontend/src/theme/theme.scss */"./src/theme/theme.scss");
+module.exports = __webpack_require__(/*! /home/adsoft/Desktop/kubeetplatform/kubeet-frontend/src/theme/typography.scss */"./src/theme/typography.scss");
 
 
 /***/ })
