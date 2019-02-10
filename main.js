@@ -157,11 +157,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lazy_load_lazy_load_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lazy-load/lazy-load.module */ "./src/app/lazy-load/lazy-load.module.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./core/core.module */ "./src/app/core/core.module.ts");
-/* harmony import */ var _pages_contact_product_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/contact/product.service */ "./src/app/pages/contact/product.service.ts");
+/* harmony import */ var _shared_services_ventas_product_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/services/ventas/product.service */ "./src/app/shared/services/ventas/product.service.ts");
 /* harmony import */ var _shared_providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared/providers/rest-api/api.crud.service */ "./src/app/shared/providers/rest-api/api.crud.service.ts");
 /* harmony import */ var _shared_providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/providers/rest-api/constants */ "./src/app/shared/providers/rest-api/constants.ts");
 /* harmony import */ var _shared_services_storage_storage_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared/services/storage/storage.service */ "./src/app/shared/services/storage/storage.service.ts");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _shared_services_firebase_firebase_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./shared/services/firebase/firebase.service */ "./src/app/shared/services/firebase/firebase.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -179,6 +183,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
+//import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -190,11 +199,13 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_10__["HttpModule"],
+                _angular_fire__WEBPACK_IMPORTED_MODULE_11__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_13__["environment"].firebase),
+                _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_12__["AngularFirestoreModule"],
                 _lazy_load_lazy_load_module__WEBPACK_IMPORTED_MODULE_3__["LazyLoadModule"],
                 _core_core_module__WEBPACK_IMPORTED_MODULE_5__["CoreModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
             ],
-            providers: [_shared_providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_7__["ApiCrudService"], _shared_providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_8__["Constants"], _shared_services_storage_storage_service__WEBPACK_IMPORTED_MODULE_9__["StorageService"], _pages_contact_product_service__WEBPACK_IMPORTED_MODULE_6__["ProductService"]],
+            providers: [_shared_providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_7__["ApiCrudService"], _shared_providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_8__["Constants"], _shared_services_storage_storage_service__WEBPACK_IMPORTED_MODULE_9__["StorageService"], _shared_services_ventas_product_service__WEBPACK_IMPORTED_MODULE_6__["ProductService"], _shared_services_firebase_firebase_service__WEBPACK_IMPORTED_MODULE_14__["FirebaseService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
     ], AppModule);
@@ -878,7 +889,7 @@ var menus = [
             {
                 'name': 'Productos',
                 'icon': 'mail',
-                'link': 'mail/mail',
+                'link': 'pages/products/newproduct',
                 'open': false,
             },
             {
@@ -1668,8 +1679,8 @@ var routes = [
     { path: 'register', loadChildren: '../register/register.module#RegisterModule' },
     { path: 'login', loadChildren: '../pages/login/login.module#LoginModule' },
     // {path: 'editor', loadChildren: '../editor/editor.module#EditorModule'},
-    //{path: '**', redirectTo: 'auth/dashboard'},
-    { path: '**', redirectTo: 'auth/pages/contact' },
+    //{path: '**', redirectTo: 'auth/dashboard'}
+    { path: '**', redirectTo: 'auth/pages/products' },
 ];
 var LazyLoadModule = /** @class */ (function () {
     function LazyLoadModule() {
@@ -1681,82 +1692,6 @@ var LazyLoadModule = /** @class */ (function () {
         })
     ], LazyLoadModule);
     return LazyLoadModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/contact/product.service.ts":
-/*!**************************************************!*\
-  !*** ./src/app/pages/contact/product.service.ts ***!
-  \**************************************************/
-/*! exports provided: ProductService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductService", function() { return ProductService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/providers/rest-api/constants */ "./src/app/shared/providers/rest-api/constants.ts");
-/* harmony import */ var _shared_providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/providers/rest-api/api.crud.service */ "./src/app/shared/providers/rest-api/api.crud.service.ts");
-/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-//import { User } from '../../../../shared/models/user.model';
-//import { ViajeModel } from '../../../../shared/models/despacho/viaje.model';
-//import {OrderStatus} from "../../../../shared/models/despacho/orderstatus.model";
-
-/**
- * Created by Tech Group BWL on 30/05/2018.
- */
-var ProductService = /** @class */ (function () {
-    // private showCreateClient = new Subject<void>();
-    // createClient$ = this.showCreateClient.asObservable();
-    // private showUpdateClient = new Subject<any>();
-    //  updateClient$ = this.showUpdateClient.asObservable();
-    function ProductService(api, C) {
-        this.api = api;
-        this.C = C;
-        this.ENDPOINT = '';
-        this.ENDPOINTPRODUCTS = 'products';
-        // this.api.DOMAIN = 'assets/data/';//TODO: quitame cuando ya exista una api oficial
-    }
-    ProductService.prototype.retrieveDataForTable = function (params) {
-        var shareGet;
-        if (params) {
-            // shareGet = this.api.get('data.json', params).share();
-            //TODO: descomentame cuando ya exista una api oficial
-            shareGet = this.api.get(this.ENDPOINTPRODUCTS, params);
-        }
-        else {
-            // shareGet = this.api.get('data.json').share();
-            //TODO: descomentame cuando ya exista una api oficial
-            shareGet = this.api.get(this.ENDPOINTPRODUCTS);
-        }
-        shareGet.map(function (res) { return res.json(); });
-        return shareGet;
-    };
-    ProductService.prototype.getDataForTableFilter = function (params) {
-        var shareGet;
-        shareGet = this.api.get(this.ENDPOINT, params).share();
-    };
-    ProductService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_shared_providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_2__["ApiCrudService"],
-            _shared_providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_1__["Constants"]])
-    ], ProductService);
-    return ProductService;
 }());
 
 
@@ -2013,6 +1948,79 @@ var Constants = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/shared/services/firebase/firebase.service.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/shared/services/firebase/firebase.service.ts ***!
+  \**************************************************************/
+/*! exports provided: FirebaseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FirebaseService", function() { return FirebaseService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FirebaseService = /** @class */ (function () {
+    function FirebaseService(db) {
+        this.db = db;
+    }
+    FirebaseService.prototype.getAvatars = function () {
+        return this.db.collection('/avatar').valueChanges();
+    };
+    FirebaseService.prototype.getUser = function (userKey) {
+        return this.db.collection('users').doc(userKey).snapshotChanges();
+    };
+    FirebaseService.prototype.updateUser = function (userKey, value) {
+        value.nameToSearch = value.name.toLowerCase();
+        return this.db.collection('users').doc(userKey).set(value);
+    };
+    FirebaseService.prototype.deleteUser = function (userKey) {
+        return this.db.collection('users').doc(userKey).delete();
+    };
+    FirebaseService.prototype.getUsers = function () {
+        return this.db.collection('users').snapshotChanges();
+    };
+    FirebaseService.prototype.searchUsers = function (searchValue) {
+        return this.db.collection('users', function (ref) { return ref.where('nameToSearch', '>=', searchValue)
+            .where('nameToSearch', '<=', searchValue + '\uf8ff'); })
+            .snapshotChanges();
+    };
+    FirebaseService.prototype.searchUsersByAge = function (value) {
+        return this.db.collection('users', function (ref) { return ref.orderBy('age').startAt(value); }).snapshotChanges();
+    };
+    FirebaseService.prototype.createUser = function (value, avatar) {
+        return this.db.collection('users').add({
+            name: value.name,
+            nameToSearch: value.name.toLowerCase(),
+            surname: value.surname,
+            age: parseInt(value.age),
+            avatar: avatar
+        });
+    };
+    FirebaseService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"]])
+    ], FirebaseService);
+    return FirebaseService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/shared/services/storage/storage.service.ts":
 /*!************************************************************!*\
   !*** ./src/app/shared/services/storage/storage.service.ts ***!
@@ -2056,6 +2064,82 @@ var StorageService = /** @class */ (function () {
         localStorage.removeItem(key);
     };
     return StorageService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/ventas/product.service.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/shared/services/ventas/product.service.ts ***!
+  \***********************************************************/
+/*! exports provided: ProductService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductService", function() { return ProductService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../providers/rest-api/constants */ "./src/app/shared/providers/rest-api/constants.ts");
+/* harmony import */ var _providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../providers/rest-api/api.crud.service */ "./src/app/shared/providers/rest-api/api.crud.service.ts");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+//import { User } from '../../../../shared/models/user.model';
+//import { ViajeModel } from '../../../../shared/models/despacho/viaje.model';
+//import {OrderStatus} from "../../../../shared/models/despacho/orderstatus.model";
+
+/**
+ * Created by Tech Group BWL on 30/05/2018.
+ */
+var ProductService = /** @class */ (function () {
+    // private showCreateClient = new Subject<void>();
+    // createClient$ = this.showCreateClient.asObservable();
+    // private showUpdateClient = new Subject<any>();
+    //  updateClient$ = this.showUpdateClient.asObservable();
+    function ProductService(api, C) {
+        this.api = api;
+        this.C = C;
+        this.ENDPOINT = '';
+        this.ENDPOINTPRODUCTS = 'products';
+        // this.api.DOMAIN = 'assets/data/';//TODO: quitame cuando ya exista una api oficial
+    }
+    ProductService.prototype.retrieveDataForTable = function (params) {
+        var shareGet;
+        if (params) {
+            // shareGet = this.api.get('data.json', params).share();
+            //TODO: descomentame cuando ya exista una api oficial
+            shareGet = this.api.get(this.ENDPOINTPRODUCTS, params);
+        }
+        else {
+            // shareGet = this.api.get('data.json').share();
+            //TODO: descomentame cuando ya exista una api oficial
+            shareGet = this.api.get(this.ENDPOINTPRODUCTS);
+        }
+        shareGet.map(function (res) { return res.json(); });
+        return shareGet;
+    };
+    ProductService.prototype.getDataForTableFilter = function (params) {
+        var shareGet;
+        shareGet = this.api.get(this.ENDPOINT, params).share();
+    };
+    ProductService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_providers_rest_api_api_crud_service__WEBPACK_IMPORTED_MODULE_2__["ApiCrudService"],
+            _providers_rest_api_constants__WEBPACK_IMPORTED_MODULE_1__["Constants"]])
+    ], ProductService);
+    return ProductService;
 }());
 
 
