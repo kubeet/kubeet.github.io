@@ -19037,7 +19037,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var appRoutes = [{
-        path: '', component: _auth_component__WEBPACK_IMPORTED_MODULE_0__["AuthComponent"], children: [
+        path: '',
+        component: _auth_component__WEBPACK_IMPORTED_MODULE_0__["AuthComponent"],
+        children: [
             { path: 'dashboard', component: _dashboard_crm_dashboard_crm_component__WEBPACK_IMPORTED_MODULE_1__["DashboardCrmComponent"] },
             { path: 'material-widgets', loadChildren: '../material-widgets/material-widgets.module#MaterialWidgetsModule' },
             { path: 'tables', loadChildren: '../tables/tables.module#TablesModule' },
